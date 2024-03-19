@@ -7,7 +7,8 @@ import os
 # Streamlit page configuration
 st.set_page_config(page_title="Tickets con AI", layout="wide")
 
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
 
 def extract_text(image):
     """Extracts text from an image using pytesseract."""
@@ -19,9 +20,8 @@ def extract_text(image):
 
 def parse_receipt_with_gpt(text):
     """Sends extracted text to GPT for parsing."""
-    try:
-        openai.api_key = openai_api_key
 
+    try:
         response = openai.ChatCompletion.create(
             model="gpt-4",
             messages=[
