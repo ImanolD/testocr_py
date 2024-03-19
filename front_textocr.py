@@ -17,7 +17,7 @@ def extract_text(image):
 def parse_receipt_with_gpt(text):
     """Sends extracted text to GPT for parsing."""
     try:
-        openai.api_key = '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'
+        
         response = openai.ChatCompletion.create(
             model="gpt-4",
             messages=[
