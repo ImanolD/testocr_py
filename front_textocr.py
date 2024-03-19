@@ -7,7 +7,9 @@ import os
 # Streamlit page configuration
 st.set_page_config(page_title="Tickets con AI", layout="wide")
 
+print("API Key:", os.getenv("OPENAI_API_KEY"))
 openai.api_key = os.getenv("OPENAI_API_KEY")
+ 
 
 
 def extract_text(image):
